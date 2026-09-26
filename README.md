@@ -5,9 +5,9 @@
 这是我做的第一版背单词修仙游戏。它和[《修仙英文录》](https://github.com/wjunlin293-tech/xiuxian-english)是同一个想法的两种做法：
 《修仙英文录》更像一款安静的背词软件，这一版更像一部热血修仙小说，战斗、榜单、异火、奇遇更多，节奏更快。
 
-**▶ [浏览器直接打开](https://wjunlin293-tech.github.io/xiuxian-english-classic/)** —— 免安装、免注册，打开就能玩
+**▶ [浏览器直接打开](https://wjunlin293-tech.github.io/reborn-immortal-english/)** —— 免安装、免注册，打开就能玩
 
-> 两版都玩过的话，欢迎在 B 站评论区或 [Issues](https://github.com/wjunlin293-tech/xiuxian-english-classic/issues) 说说更喜欢哪一版、为什么。
+> 两版都玩过的话，欢迎在 B 站评论区或 [Issues](https://github.com/wjunlin293-tech/reborn-immortal-english/issues) 说说更喜欢哪一版、为什么。
 > 这会直接决定后面往哪个方向继续做。
 
 ![标题画面](docs/images/01-title.png)
