@@ -1875,7 +1875,8 @@ const REALM_STAT_REF = [
 // 「战力境阶」由此成为 state 存储的棘轮值（只升、不因换搭配掉阶）；异火仍推「境界」剧情轴。
 // 阶段三·硬核成长放慢：前 4 档(凡品→斗灵)原样不变；斗灵(idx4)起陡墙，无天花板。
 // 2026-06-15 · 每境界突破所需斗气全线 ×1.3（取整到 50）：整体抬高 30%·曲线形状不变。
-const QI_BREAK_LINE = [650, 1500, 2550, 3850, 8850, 14300, 20800, 28600, 37700, 48100];
+// 2026-09-26 · 再全线 ×1.5（四舍五入到 50）：原 [650, 1500, 2550, 3850, 8850, 14300, 20800, 28600, 37700, 48100]。
+const QI_BREAK_LINE = [1000, 2250, 3850, 5800, 13300, 21450, 31200, 42900, 56550, 72150];
 const QI_REGEN_REALM_STEP = 0.6;       // 每突破一阶·静养回气倍率增量（0.3→0.6 翻倍·破境后回气明显更快）
 
 // ─── 批3 · 境界突破数值（F1 指数六维奖励 + F2 根基±上限 + F3 敌方缩放）─────────
@@ -18268,7 +18269,7 @@ function applyZone(screen) {
 // ─── 音频系统：Web Audio 程序生成 · 分屏氛围音乐 + 事件音效 ───────────
 // 默认音量「大众化」：music 30% / sfx 55% — 进游戏不刺耳、关键音效仍可闻
 const AUDIO_KEY = "xiuxian_audio_v3";   // v3 · 加 master 处理链防破音 · 重置旧值
-const AUDIO_DEFAULTS = { music_vol: 0.45, sfx_vol: 0.60, muted: false };
+const AUDIO_DEFAULTS = { music_vol: 0.315, sfx_vol: 0.42, muted: false };   // 2026-09-26 用户：默认降到原来的 70%（原 0.45 / 0.60）
 const MASTER_VOL_SCALE = 0.5;   // T1(2026-06-14)：最大 master 音量整体下调 50%（滑块仍 0–100%，实际封顶减半）
 function loadAudioSettings() {
   try {
@@ -25965,13 +25966,13 @@ function runSelfTest() {
     state.power_realm = 10; eq("A tribQ pr10", tribQ(), 12);
     state.power_realm = 8; eq("A effPass==base(无减免)", effectiveTribPass(), tribBasePass());
     state.power_realm = 0; state.trib_easy = 10; eq("A effPass 下限>=2", effectiveTribPass(), 2); state.trib_easy = 0;
-    state.power_realm = 0; eq("A qiLine pr0", qiBreakLine(), 650);
-    state.power_realm = 4; eq("A qiLine pr4", qiBreakLine(), 8850);
-    state.power_realm = 9; eq("A qiLine pr9", qiBreakLine(), 48100);
+    state.power_realm = 0; eq("A qiLine pr0", qiBreakLine(), 1000);
+    state.power_realm = 4; eq("A qiLine pr4", qiBreakLine(), 13300);
+    state.power_realm = 9; eq("A qiLine pr9", qiBreakLine(), 72150);
     state.power_realm = 10; eq("A qiLine pr10=null", qiBreakLine(), null);
     state.power_realm = 10; state.qi = 999999; eq("A pr10 canBreak=false", canBreakthrough(), false);
-    state.power_realm = 4; state.qi = 8849; eq("A pr4 qi<line=false", canBreakthrough(), false);
-    state.qi = 8850; eq("A pr4 qi>=line=true", canBreakthrough(), true);
+    state.power_realm = 4; state.qi = 13299; eq("A pr4 qi<line=false", canBreakthrough(), false);
+    state.qi = 13300; eq("A pr4 qi>=line=true", canBreakthrough(), true);
     ok("A QI_BREAK_LINE 长度10", QI_BREAK_LINE.length === 10, QI_BREAK_LINE.length);
     ok("A REALMS 长度11", REALMS.length === 11, REALMS.length);
     let inc = true; for (let i = 1; i < QI_BREAK_LINE.length; i++) if (QI_BREAK_LINE[i] <= QI_BREAK_LINE[i - 1]) inc = false;
