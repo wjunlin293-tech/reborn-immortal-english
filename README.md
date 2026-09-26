@@ -1,11 +1,11 @@
-# 修仙英文录 · 初版（异火篇）
+# 重生之我在仙界学英语
 
 **一款边背单词边修仙的英语学习游戏。答对一个词，就是出一招；认得的词越多，境界越高。**
 
-这是《修仙英文录》的**初版**。它和[新版](https://github.com/wjunlin293-tech/xiuxian-english)是同一个想法的两种做法：
-新版更像一款安静的背词软件，初版更像一部热血修仙小说，战斗、榜单、异火、奇遇更多，节奏更快。
+这是我做的第一版背单词修仙游戏。它和[《世外果缘》](https://github.com/wjunlin293-tech/xiuxian-english)是同一个想法的两种做法：
+《世外果缘》更像一款安静的背词软件，这一版更像一部热血修仙小说，战斗、榜单、异火、奇遇更多，节奏更快。
 
-**▶ [浏览器直接打开初版](https://wjunlin293-tech.github.io/xiuxian-english-classic/)** —— 免安装、免注册，打开就能玩
+**▶ [浏览器直接打开](https://wjunlin293-tech.github.io/xiuxian-english-classic/)** —— 免安装、免注册，打开就能玩
 
 > 两版都玩过的话，欢迎在 B 站评论区或 [Issues](https://github.com/wjunlin293-tech/xiuxian-english-classic/issues) 说说更喜欢哪一版、为什么。
 > 这会直接决定后面往哪个方向继续做。
@@ -87,9 +87,9 @@
 | **发音** | 调用浏览器自带的英语语音朗读，另显示音标 |
 | **跨档** | 已掌握的词在新存档里不会重复出现 |
 
-## 和新版的区别
+## 和《世外果缘》的区别
 
-| | 初版（本仓库） | [新版](https://github.com/wjunlin293-tech/xiuxian-english) |
+| | 重生之我在仙界学英语（本仓库） | [世外果缘](https://github.com/wjunlin293-tech/xiuxian-english) |
 |---|---|---|
 | **风格** | 热血爽文：异火、榜单、越阶挑战 | 慢节奏养成：按月推进，寿元有限 |
 | **词量** | 3 本词书，3,000 词 | 8 本词书（中考到 GRE），去重后 9,245 词 |
