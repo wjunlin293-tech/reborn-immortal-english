@@ -18269,8 +18269,8 @@ function applyZone(screen) {
 // ─── 音频系统：Web Audio 程序生成 · 分屏氛围音乐 + 事件音效 ───────────
 // 默认音量「大众化」：music 30% / sfx 55% — 进游戏不刺耳、关键音效仍可闻
 const AUDIO_KEY = "xiuxian_audio_v3";   // v3 · 加 master 处理链防破音 · 重置旧值
-const AUDIO_DEFAULTS = { music_vol: 0.315, sfx_vol: 0.42, muted: false };   // 2026-09-26 用户：默认降到原来的 70%（原 0.45 / 0.60）
-const MASTER_VOL_SCALE = 0.5;   // T1(2026-06-14)：最大 master 音量整体下调 50%（滑块仍 0–100%，实际封顶减半）
+const AUDIO_DEFAULTS = { music_vol: 0.45, sfx_vol: 0.60, muted: false };
+const MASTER_VOL_SCALE = 0.35;  // T1(2026-06-14)：最大 master 音量整体下调 50%；2026-09-26 用户再 ×0.7（原 0.5）· 滑块数值不变
 function loadAudioSettings() {
   try {
     const raw = localStorage.getItem(AUDIO_KEY);
@@ -18317,6 +18317,7 @@ function speakWord(word, force) {
       if (v) u.voice = v;
       u.lang = "en-US";
       u.rate = 0.9;
+      u.volume = 0.7;   // 2026-09-26 用户：发音降到 70%（原默认 1.0）
       _ttsUtter = u;                       // 持引用 · 防播放中被 GC 掐断
       synth.speak(u);
       if (synth.paused) { try { synth.resume(); } catch (e) {} }   // Chrome 偶发暂停 → 轻踢
